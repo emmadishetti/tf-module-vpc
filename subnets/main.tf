@@ -5,7 +5,7 @@ resource "aws_subnet" "main" {
   availability_zone = each.value["az"]
 
   tags = {
-    name = lookup(aws_subnet.main, each.key, null)
+    name = each.key["subnets"]
   }
 }
 
